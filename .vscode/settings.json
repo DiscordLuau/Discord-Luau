@@ -1,27 +1,23 @@
 {
-  "luau-lsp.require.mode": "relativeToFile",
-  "luau-lsp.inlayHints.variableTypes": true,
-  "luau-lsp.inlayHints.functionReturnTypes": true,
-  "luau-lsp.inlayHints.parameterNames": "all",
-  "luau-lsp.inlayHints.parameterTypes": true,
-  "luau-lsp.inlayHints.typeHintMaxLength": 50,
-  "luau-lsp.require.directoryAliases": {
-    "@lune/": "~/.lune/.typedefs/0.8.2/",
-
-    "@Builders": "Package/Classes/Builders",
-    "@Network": "Package/Classes/Network",
-    "@Objects": "Package/Classes/Objects",
-    "@Data": "Package/Data",
-    "@Enums": "Package/Enums",
-    "@Std": "Package/Std",
-    "@Utils": "Package/Utils",
-    "@Vendor": "Package/Vendor",
-  },
-
-  "[lua]": {
-		"editor.formatOnSave": true
-	},
-	"[luau]": {
-		"editor.formatOnSave": true
+	"editor.formatOnSave": true,
+	"luau-lsp.require.mode": "relativeToFile",
+	"luau-lsp.inlayHints.variableTypes": true,
+	"luau-lsp.inlayHints.functionReturnTypes": true,
+	"luau-lsp.inlayHints.parameterNames": "all",
+	"luau-lsp.inlayHints.parameterTypes": true,
+	"luau-lsp.inlayHints.typeHintMaxLength": 50,
+	"luau-lsp.require.directoryAliases": {
+		"@lune/": "~/.lune/.typedefs/0.8.6/",
+		"@builders": "./packages/builders",
+		"@cdn": "./packages/cdn/src",
+		"@classes": "./packages/classes/src",
+		"@core": "./packages/core/src",
+		"@extensions": "./packages/extensions/src",
+		"@std-polyfills": "./packages/std-polyfills/src",
+		"@api-types": "./packages/api-types/src",
+		"@utils": "./packages/utils/src",
+		"@vendor": "./packages/vendor/src",
+		"@voice": "./packages/voice/src",
+		"@websocket": "./packages/websocket/src"
 	},
 }
