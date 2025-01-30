@@ -2,10 +2,10 @@
 	Mapping out all discord responses that we can get from the Discord v10 REST/HTTP API.
 ]]
 
-local objects = require("@api-types/apiTypes")
+local objects = require("../apiTypes")
 
 -- [[ Base ]] --
-
+export type TEST_TYPE = objects.Partial<number>
 export type Response<DATA> = DATA
 export type Request<DATA> = DATA
 
@@ -164,7 +164,7 @@ export type StartThreadInForumOrMediaChannelRequest = Request<{
 	rate_limit_per_user: number?, -- amount of seconds a user has to wait before sending another message (0-21600)
 	--files: { },
 	-- payload_json: string,
-	applied_tags: { objects.Snowflake }, -- the IDs of the set of tags that have been applied to a thread in a GUILD_FORUM or a GUILD_MEDIA channel
+	applied_tags: { objects.Snowflake }?, -- the IDs of the set of tags that have been applied to a thread in a GUILD_FORUM or a GUILD_MEDIA channel
 	message: objects.ForumAndMediaThreadMessageObject?, -- contents of the first message in the forum/media thread
 }>
 
@@ -248,12 +248,16 @@ export type CreateGuildChannelRequest = Request<
 >
 
 -- https://discord.com/developers/docs/resources/guild#modify-guild-channel-positions
-export type ModifyGuildChannelPositionsRequest = Request<{
-	id: objects.Snowflake, -- channel id
-	position: number?, -- sorting position of the channel (channels with the same position are sorted by id)
-	lock_permissions: boolean?, -- syncs the permission overwrites with the new parent, if moving to a new category
-	parent_id: objects.Snowflake?, -- the new parent ID for the channel that is moved
-}>
+export type ModifyGuildChannelPositionsRequest = Request<
+	{
+		{
+			id: objects.Snowflake, -- channel id
+			position: number?, -- sorting position of the channel (channels with the same position are sorted by id)
+			lock_permissions: boolean?, -- syncs the permission overwrites with the new parent, if moving to a new category
+			parent_id: objects.Snowflake?, -- the new parent ID for the channel that is moved
+		}
+	}
+>
 
 -- https://discord.com/developers/docs/resources/guild#add-guild-member
 export type AddGuildMemberRequest = Request<{

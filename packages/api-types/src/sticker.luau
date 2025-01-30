@@ -1,11 +1,11 @@
-local reflect = require("@utils/table/reflect")
+local util = require("../lune_packages/util")
 
-local StickerTypes = table.freeze(reflect({
+local StickerTypes = table.freeze(util.table.reflect({
 	Standard = 1,
 	Guild = 2,
 }))
 
-local StickerFormatTypes = table.freeze(reflect({
+local StickerFormatTypes = table.freeze(util.table.reflect({
 	PNG = 1,
 	APNG = 2,
 	LOTTIE = 3,
